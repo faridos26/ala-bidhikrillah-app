@@ -1,0 +1,876 @@
+{
+  "app": {
+    "name": "لحظة سكينة",
+    "version": "1.6.0",
+    "status": "CONTENT_REVIEW_REQUIRED"
+  },
+  "reciters": [
+    {
+      "code": "BASIT_MURATTAL",
+      "name_ar": "عبد الباسط عبد الصمد",
+      "style_ar": "مرتل — حفص عن عاصم",
+      "server_base_url": "https://server7.mp3quran.net/basit/",
+      "source": "mp3quran.net",
+      "is_default": 1
+    },
+    {
+      "code": "BASIT_MUJAWWAD",
+      "name_ar": "عبد الباسط عبد الصمد",
+      "style_ar": "مجوّد — المصحف المجوّد",
+      "server_base_url": "https://www.mp3quran.net/ar/basit_mjwd",
+      "source": "mp3quran.net",
+      "is_default": 0
+    }
+  ],
+  "categories": [
+    {
+      "code": "SADNESS_DISTRESS",
+      "name_ar": "الحزن وضيق الصدر",
+      "is_safety_route": false,
+      "keywords": [
+        "حزن",
+        "حزين",
+        "ضيق",
+        "هم",
+        "ضيق الصدر"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الرعد 13:28",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 13,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:286",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "ANXIETY_FEAR",
+      "name_ar": "القلق والخوف",
+      "is_safety_route": false,
+      "keywords": [
+        "قلق",
+        "خوف",
+        "خائف",
+        "توتر",
+        "رهبة"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "قُلْ لَنْ يُصِيبَنَا إِلَّا مَا كَتَبَ اللَّهُ لَنَا هُوَ مَوْلَانَا ۖ وَعَلَى اللَّهِ فَلْيَتَوَكَّلِ الْمُؤْمِنُونَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة التوبة 9:51",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 9,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "وَلَا تَهِنُوا وَلَا تَحْزَنُوا وَأَنتُمُ الْأَعْلَوْنَ إِن كُنتُم مُّؤْمِنِينَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة آل عمران 3:139",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 3,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "LOSS_CALAMITY",
+      "name_ar": "الفقد والمصيبة",
+      "is_safety_route": false,
+      "keywords": [
+        "فقد",
+        "وفاة",
+        "موت",
+        "مصيبة",
+        "فقدان"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "الَّذِينَ إِذَا أَصَابَتْهُمْ مُصِيبَةٌ قَالُوا إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:156",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "وَلَنَبْلُوَنَّكُم بِشَيْءٍ مِّنَ الْخَوْفِ وَالْجُوعِ وَنَقْصٍ مِّنَ الْأَمْوَالِ وَالْأَنفُسِ وَالثَّمَرَاتِ ۗ وَبَشِّرِ الصَّابِرِينَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:155",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "ILLNESS_TRIAL",
+      "name_ar": "المرض والابتلاء",
+      "is_safety_route": false,
+      "keywords": [
+        "مرض",
+        "مريض",
+        "ابتلاء",
+        "ألم",
+        "شفاء",
+        "تعب"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَإِذَا مَرِضْتُ فَهُوَ يَشْفِينِ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الشعراء 26:80",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 26,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "ما مِن مسلمٍ يُصيبُه أذًى مِن مرضٍ فما سِواه إلا حَطَّ اللهُ به سيِّئاتِه كما تَحُطُّ الشجرةُ ورَقَها",
+          "source": "متفق عليه (البخاري ومسلم)",
+          "reference": "يُرجى تأكيد رقم الحديث حسب الطبعة المعتمدة لديكم",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "RIZQ_HARDSHIP",
+      "name_ar": "ضيق الرزق والحاجة",
+      "is_safety_route": false,
+      "keywords": [
+        "رزق",
+        "مال",
+        "دين",
+        "حاجة",
+        "فقر",
+        "عمل"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا ۝ وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الطلاق 65:2-3",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 65,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:216",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "PATIENCE_STEADFASTNESS",
+      "name_ar": "الصبر والثبات",
+      "is_safety_route": false,
+      "keywords": [
+        "صبر",
+        "ثبات",
+        "تحمل",
+        "اصبر"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:153",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "ومن يتصبر يصبره الله، وما أعطي أحد عطاء خيرًا وأوسع من الصبر.",
+          "source": "صحيح البخاري",
+          "reference": "1469",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "LONELINESS_COMFORT",
+      "name_ar": "الوحدة والاحتياج إلى السكينة",
+      "is_safety_route": false,
+      "keywords": [
+        "وحدة",
+        "وحيد",
+        "وحشة",
+        "لا أحد"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ ۚ وَاللَّهُ بِمَا تَعْمَلُونَ بَصِيرٌ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الحديد 57:4",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 57,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "لَا تَخَافَا ۖ إِنَّنِي مَعَكُمَا أَسْمَعُ وَأَرَىٰ",
+          "source": "القرآن الكريم",
+          "reference": "سورة طه 20:46",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 20,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "HOPE",
+      "name_ar": "الأمل والرجاء",
+      "is_safety_route": false,
+      "keywords": [
+        "أمل",
+        "رجاء",
+        "يأس",
+        "فرج",
+        "مستقبل"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا ۝ إِنَّ مَعَ الْعُسْرِ يُسْرًا",
+          "source": "القرآن الكريم",
+          "reference": "سورة الشرح 94:5-6",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 94,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "عجبًا لأمر المؤمن إن أمره كله خير، وليس ذاك لأحد إلا للمؤمن؛ إن أصابته سراء شكر فكان خيرًا له، وإن أصابته ضراء صبر فكان خيرًا له.",
+          "source": "صحيح مسلم",
+          "reference": "2999",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "TRANQUILITY_PEACE",
+      "name_ar": "السكينة والطمأنينة",
+      "is_safety_route": false,
+      "keywords": [
+        "سكينة",
+        "طمأنينة",
+        "راحة",
+        "اطمئنان"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الرعد 13:28",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 13,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "هُوَ الَّذِي أَنزَلَ السَّكِينَةَ فِي قُلُوبِ الْمُؤْمِنِينَ لِيَزْدَادُوا إِيمَانًا مَّعَ إِيمَانِهِمْ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الفتح 48:4",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 48,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "STUDY_GUIDANCE",
+      "name_ar": "الدراسة وطلب العلم والتوفيق",
+      "is_safety_route": false,
+      "keywords": [
+        "دراسة",
+        "امتحان",
+        "اختبار",
+        "علم",
+        "تعلم",
+        "توفيق"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَقُل رَّبِّ زِدْنِي عِلْمًا",
+          "source": "القرآن الكريم",
+          "reference": "سورة طه 20:114",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 20,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "مَن سَلَكَ طريقًا يلتمِسُ فيه علمًا سهَّل اللهُ له به طريقًا إلى الجنةِ",
+          "source": "صحيح مسلم",
+          "reference": "رقم 2699",
+          "status": "VERIFIED",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": "dorar.net (الموسوعة الحديثية)",
+          "verified_at": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "code": "GUIDANCE_DECISION",
+      "name_ar": "الحيرة وطلب الهداية",
+      "is_safety_route": false,
+      "keywords": [
+        "حيرة",
+        "محتار",
+        "قرار",
+        "هداية",
+        "اختيار"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَمَن يَعْتَصِم بِاللَّهِ فَقَدْ هُدِيَ إِلَىٰ صِرَاطٍ مُّسْتَقِيمٍ",
+          "source": "القرآن الكريم",
+          "reference": "سورة آل عمران 3:101",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 3,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "اللَّهُمَّ إِنِّي أَسْتَخِيرُكَ بِعِلْمِكَ وَأَسْتَقْدِرُكَ بِقُدْرَتِكَ وَأَسْأَلُكَ مِنْ فَضْلِكَ الْعَظِيمِ",
+          "source": "صحيح البخاري (دعاء الاستخارة)",
+          "reference": "رقم 1162",
+          "status": "VERIFIED",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": "dorar.net (الموسوعة الحديثية)",
+          "verified_at": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "code": "SUCCESS_ACHIEVEMENT",
+      "name_ar": "النجاح والإنجاز",
+      "is_safety_route": false,
+      "keywords": [
+        "نجاح",
+        "نجحت",
+        "إنجاز",
+        "حققت",
+        "تخرج",
+        "ترقية"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ۚ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ",
+          "source": "القرآن الكريم",
+          "reference": "سورة هود 11:88",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 11,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "احرص على ما ينفعك، واستعن بالله، ولا تعجز.",
+          "source": "صحيح مسلم",
+          "reference": "2664",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "REPENTANCE_REGRET",
+      "name_ar": "التوبة والندم",
+      "is_safety_route": false,
+      "keywords": [
+        "توبة",
+        "ندم",
+        "ذنبي",
+        "الرجوع",
+        "معصية"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "قُلْ يَا عِبَادِيَ الَّذِينَ أَسْرَفُوا عَلَىٰ أَنفُسِهِمْ لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ ۚ إِنَّ اللَّهَ يَغْفِرُ الذُّنُوبَ جَمِيعًا",
+          "source": "القرآن الكريم",
+          "reference": "سورة الزمر 39:53",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 39,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "يَا أَيُّهَا الَّذِينَ آمَنُوا تُوبُوا إِلَى اللَّهِ تَوْبَةً نَّصُوحًا",
+          "source": "القرآن الكريم",
+          "reference": "سورة التحريم 66:8",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 66,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "FORGIVENESS_ISTIGHFAR",
+      "name_ar": "الاستغفار وطلب المغفرة",
+      "is_safety_route": false,
+      "keywords": [
+        "استغفار",
+        "أستغفر",
+        "مغفرة",
+        "اغفر لي",
+        "ذنوب"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "رَبَّنَا ظَلَمْنَا أَنفُسَنَا وَإِن لَّمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة الأعراف 7:23",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 7,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "اللهم أنت ربي لا إله إلا أنت، خلقتني وأنا عبدك، وأنا على عهدك ووعدك ما استطعت، أعوذ بك من شر ما صنعت، أبوء لك بنعمتك علي وأبوء لك بذنبي، فاغفر لي فإنه لا يغفر الذنوب إلا أنت.",
+          "source": "صحيح البخاري",
+          "reference": "6306",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "JOY_GRATITUDE",
+      "name_ar": "الفرح والشكر",
+      "is_safety_route": false,
+      "keywords": [
+        "فرح",
+        "سعيد",
+        "سعادة",
+        "شكر",
+        "نعمة",
+        "الحمد لله"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "لَئِن شَكَرْتُمْ لَأَزِيدَنَّكُمْ",
+          "source": "القرآن الكريم",
+          "reference": "سورة إبراهيم 14:7",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 14,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ",
+          "source": "القرآن الكريم",
+          "reference": "سورة النمل 27:19",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 27,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "FAMILY_KINSHIP",
+      "name_ar": "العائلة وصلة الرحم",
+      "is_safety_route": false,
+      "keywords": [
+        "عائلة",
+        "أم",
+        "أب",
+        "أخ",
+        "أخت",
+        "أبناء",
+        "صلة الرحم"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَقُل رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+          "source": "القرآن الكريم",
+          "reference": "سورة الإسراء 17:24",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 17,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "مَن كان يؤمنُ باللهِ واليومِ الآخرِ فليصِلْ رحِمَه",
+          "source": "متفق عليه",
+          "reference": "البخاري 6138، ومسلم 47",
+          "status": "VERIFIED",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": "dorar.net (الموسوعة الحديثية)",
+          "verified_at": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "code": "MARRIAGE_SEEKING",
+      "name_ar": "طلب الزواج والاستقرار",
+      "is_safety_route": false,
+      "keywords": [
+        "زواج",
+        "أتزوج",
+        "زوج صالح",
+        "زوجة صالحة",
+        "خطوبة",
+        "استقرار"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا",
+          "source": "القرآن الكريم",
+          "reference": "سورة الفرقان 25:74",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 25,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "وَخَلَقَ مِنْهَا زَوْجَهَا",
+          "source": "القرآن الكريم",
+          "reference": "سورة النساء 4:1 (جزء من الآية)",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 4,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "MARITAL_RELATIONSHIP",
+      "name_ar": "الحياة والعلاقة الزوجية",
+      "is_safety_route": false,
+      "keywords": [
+        "زوجي",
+        "زوجتي",
+        "مودة",
+        "رحمة",
+        "خلاف زوجي",
+        "حياة زوجية"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً",
+          "source": "القرآن الكريم",
+          "reference": "سورة الروم 30:21",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 30,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "HADITH",
+          "text_ar": "خيرُكم خيرُكم لأهلِه، وأنا خيرُكم لأهلي",
+          "source": "سنن الترمذي",
+          "reference": "رقم 3895 (حسن صحيح - تصحيح الألباني)",
+          "status": "VERIFIED",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": "dorar.net (الموسوعة الحديثية)",
+          "verified_at": "2026-09-06"
+        }
+      ]
+    },
+    {
+      "code": "GENERAL_FALLBACK",
+      "name_ar": "المحتوى العام",
+      "is_safety_route": false,
+      "keywords": [
+        "عام",
+        "غير محدد"
+      ],
+      "content": [
+        {
+          "type": "QURAN",
+          "text_ar": "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ ۖ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:186",
+          "status": "VERIFIED",
+          "added_by": "original_seed",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+          "source": "القرآن الكريم",
+          "reference": "سورة البقرة 2:201",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 2,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    },
+    {
+      "code": "SAFETY_CRISIS",
+      "name_ar": "أزمة نفسية طارئة - إيذاء النفس",
+      "is_safety_route": true,
+      "keywords": [
+        "انتحار",
+        "انتحر",
+        "أنهي حياتي",
+        "اؤذي نفسي",
+        "أأذي نفسي",
+        "اذية نفسي",
+        "افكار انتحارية",
+        "اريد اموت",
+        "أريد أن أموت",
+        "تعبت من الحياة",
+        "ما فيه فايدة اعيش",
+        "لا اطيق العيش"
+      ],
+      "content": [
+        {
+          "type": "SAFETY_ACTION",
+          "text_ar": "إذا كنت تفكر الآن في إيذاء نفسك أو إنهاء حياتك، فهذا يستحق اهتمامًا فوريًا. لا تبقَ وحدك: تواصل الآن مع خط المساعدة النفسية أو الطوارئ في بلدك، أو اتصل بشخص تثق به وأخبره بما تشعر به. حياتك تستحق أن تُصان.",
+          "source": "رسالة أمان تشغيلية (وليست نصًا شرعيًا)",
+          "reference": "SAFETY_COPY — يتطلب ربط رقم الطوارئ/الخط الساخن المحلي حسب دولة المستخدم قبل النشر",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": null,
+          "audio_note": null,
+          "verified_by": null,
+          "verified_at": null
+        },
+        {
+          "type": "QURAN",
+          "text_ar": "وَلَا تَيْأَسُوا مِن رَّوْحِ اللَّهِ ۖ إِنَّهُ لَا يَيْأَسُ مِن رَّوْحِ اللَّهِ إِلَّا الْقَوْمُ الْكَافِرُونَ",
+          "source": "القرآن الكريم",
+          "reference": "سورة يوسف 12:87",
+          "status": "PENDING_REVIEW",
+          "added_by": "audit_addition_2026_09_05",
+          "surah_number": 12,
+          "audio_note": "رابط صوتي = السورة كاملة من مصدر مؤكد (mp3quran.net)، وليس الآية وحدها",
+          "verified_by": null,
+          "verified_at": null
+        }
+      ]
+    }
+  ],
+  "engagement_prompts": [
+    {
+      "prompt_type": "SHARE",
+      "enabled": 1,
+      "headline_ar": "هل استفدت من «لحظة سكينة»؟",
+      "body_ar": "شاركه مع شخص قد يحتاج لحظة سكينة أيضًا",
+      "cta_ar": "📤 شارك التطبيق",
+      "trigger_min_content_views": 1,
+      "cooldown_days_after_dismiss": 7,
+      "excluded_route_rule": "NEVER_SHOW_WHEN_LAST_CATEGORY_IS_SAFETY_ROUTE",
+      "sort_order": 1,
+      "meta": {
+        "share_text_ar": "جرّب تطبيق «لحظة سكينة» — آيات وأحاديث تُعين على لحظات الحزن والقلق والفرح",
+        "share_url": "PLACEHOLDER — رابط تحميل التطبيق/الموقع، يُملأ قبل التفعيل الفعلي"
+      }
+    },
+    {
+      "prompt_type": "RATE",
+      "enabled": 0,
+      "headline_ar": "هل أعجبك التطبيق؟",
+      "body_ar": "تقييمك يساعد أشخاصًا آخرين على اكتشاف «لحظة سكينة»",
+      "cta_ar": "⭐ قيّم التطبيق",
+      "trigger_min_content_views": 5,
+      "cooldown_days_after_dismiss": 30,
+      "excluded_route_rule": "NEVER_SHOW_WHEN_LAST_CATEGORY_IS_SAFETY_ROUTE",
+      "sort_order": 2,
+      "meta": {
+        "activation_requirement": "لا تُفعَّل قبل نشر التطبيق فعليًا على المتاجر وتوفر روابط حقيقية",
+        "store_url_android": null,
+        "store_url_ios": null
+      }
+    },
+    {
+      "prompt_type": "DONATE",
+      "enabled": 1,
+      "headline_ar": "هل وجدت في «لحظة سكينة» ما نفعك؟",
+      "body_ar": "الميزة قيد التجهيز — اضغط لتخبرنا أنك مهتم، وسنُعلمك فور تفعيلها فعليًا.",
+      "cta_ar": "🤍 ساهم في استمرار الخير",
+      "trigger_min_content_views": 3,
+      "cooldown_days_after_dismiss": 14,
+      "excluded_route_rule": "NEVER_SHOW_WHEN_LAST_CATEGORY_IS_SAFETY_ROUTE",
+      "sort_order": 3,
+      "meta": {},
+      "methods": [
+        {
+          "method_code": "E_DONATION",
+          "label_ar": "💳 هبة إلكترونية",
+          "icon": "💳",
+          "is_active": 0,
+          "details": "PLACEHOLDER — يتطلب ربط بوابة دفع فعلية قبل التفعيل",
+          "sort_order": 1
+        },
+        {
+          "method_code": "BANK_TRANSFER",
+          "label_ar": "🏦 تحويل بنكي",
+          "icon": "🏦",
+          "is_active": 0,
+          "details": "PLACEHOLDER — يتطلب بيانات الحساب البنكي الرسمية قبل التفعيل",
+          "sort_order": 2
+        },
+        {
+          "method_code": "LOCAL_PAYMENT",
+          "label_ar": "📱 طريقة دفع محلية",
+          "icon": "📱",
+          "is_active": 0,
+          "details": "PLACEHOLDER — تُحدَّد حسب دولة الإطلاق (مثال: STC Pay، فوري...)",
+          "sort_order": 3
+        },
+        {
+          "method_code": "INTERNATIONAL",
+          "label_ar": "🌍 دفع دولي (لاحقًا)",
+          "icon": "🌍",
+          "is_active": 0,
+          "details": "PLACEHOLDER — مرحلة لاحقة، غير مطلوبة في v1",
+          "sort_order": 4
+        }
+      ]
+    }
+  ]
+}

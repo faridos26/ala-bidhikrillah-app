@@ -7,7 +7,7 @@ import {
   sakinaData,
   verifiedContent,
   Category,
-} from "@/lib/sakina";
+} from "../lib/sakina";
 
 const examples = [
   "أشعر بالقلق والخوف وأحتاج إلى الطمأنينة",

@@ -1,0 +1,327 @@
+:root {
+  /* -- الليل: القاعدة -- */
+  --ink: #0b1d22;
+  --ink-2: #142e35;
+  --ink-3: #1a3841;
+
+  /* -- الذهب: خطوط الزخرفة والتفاعل -- */
+  --gold: #b8933e;
+  --gold-bright: #d9b86b;
+
+  /* -- الرَق: صفحة المخطوطة (لحظة التباين الوحيدة) -- */
+  --parchment: #efe6d2;
+  --parchment-ink: #2a2013;
+  --parchment-muted: #6b5c3f;
+
+  /* -- الأزمة: نحاسي دافئ بدل الأحمر التحذيري النمطي -- */
+  --safety: #b5654a;
+  --safety-bg: #241a17;
+
+  --muted: #7fa3a3;
+  --ink-text: #eaf2f1;
+
+  --radius-folio: 4px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--ink-text);
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-ui), "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.7;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 64px 20px 90px;
+}
+
+/* -- البطل: النجمة الثمانية كزخرفة وحيدة هادئة خلف العنوان -- */
+.brand {
+  position: relative;
+  text-align: center;
+  margin-bottom: 44px;
+  padding: 20px 0;
+}
+
+.brand-motif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 380px;
+  height: 380px;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.brand h1 {
+  position: relative;
+  font-family: var(--font-display), serif;
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: var(--parchment);
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
+}
+
+.brand p {
+  position: relative;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 32ch;
+  margin-inline: auto;
+}
+
+/* -- الإدخال -- */
+.input-card {
+  background: var(--ink-2);
+  border-radius: 10px;
+  padding: 22px;
+  border: 1px solid rgba(217, 184, 107, 0.14);
+}
+
+textarea {
+  width: 100%;
+  min-height: 96px;
+  resize: vertical;
+  background: transparent;
+  border: none;
+  color: var(--ink-text);
+  font-family: var(--font-ui), sans-serif;
+  font-size: 1.05rem;
+  outline: none;
+}
+
+textarea::placeholder { color: var(--muted); }
+
+.submit-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+button { font-family: var(--font-ui), sans-serif; cursor: pointer; border: none; }
+
+.btn-primary {
+  background: var(--gold);
+  color: #1a1500;
+  font-weight: 700;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+.btn-primary:hover { background: var(--gold-bright); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { opacity: 0.45; cursor: default; }
+.btn-primary:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+
+.btn-ghost {
+  background: rgba(217, 184, 107, 0.08);
+  color: var(--ink-text);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+.btn-ghost:hover { background: rgba(217, 184, 107, 0.16); }
+.btn-ghost:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+
+.chips-section {
+  margin-top: 22px;
+  text-align: center;
+}
+
+.chips-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.chip {
+  background: transparent;
+  color: var(--ink-text);
+  border: 1px solid rgba(217, 184, 107, 0.28);
+  padding: 7px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.chip:hover:not(:disabled) {
+  background: rgba(217, 184, 107, 0.1);
+  border-color: var(--gold-bright);
+}
+.chip:disabled { opacity: 0.4; cursor: default; }
+.chip:focus-visible { outline: 2px solid var(--gold-bright); outline-offset: 2px; }
+
+.chip-safety {
+  display: block;
+  margin: 18px auto 0;
+  border-color: rgba(181, 101, 74, 0.5);
+  color: var(--safety);
+  font-weight: 600;
+}
+.chip-safety:hover:not(:disabled) {
+  background: rgba(181, 101, 74, 0.1);
+  border-color: var(--safety);
+}
+
+.error-message {
+  margin-top: 18px;
+  color: var(--safety);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* -- بطاقة النتيجة: صفحة مخطوطة تطفو، لا بطاقة SaaS عادية -- */
+.result-card {
+  position: relative;
+  margin-top: 32px;
+  background: var(--parchment);
+  color: var(--parchment-ink);
+  border-radius: var(--radius-folio);
+  padding: 34px 30px;
+  box-shadow: 0 24px 60px -20px rgba(0,0,0,0.55);
+  animation: unfurl 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.result-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px solid rgba(184, 147, 62, 0.5);
+  pointer-events: none;
+}
+
+.corner-flourish {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: var(--gold);
+  z-index: 1;
+}
+.corner-flourish.tl { top: 8px; left: 8px; }
+.corner-flourish.tr { top: 8px; right: 8px; transform: scaleX(-1); }
+
+.result-card.safety {
+  background: var(--safety-bg);
+  color: var(--ink-text);
+}
+.result-card.safety::before { border-color: rgba(181, 101, 74, 0.55); }
+.result-card.safety .corner-flourish { color: var(--safety); }
+
+@keyframes unfurl {
+  from { opacity: 0; transform: translateY(10px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.category-label {
+  position: relative;
+  font-size: 0.8rem;
+  color: var(--parchment-muted);
+  margin-bottom: 16px;
+  z-index: 1;
+}
+.result-card.safety .category-label { color: var(--muted); }
+
+.verse-text {
+  position: relative;
+  font-family: var(--font-quran), serif;
+  font-size: 1.55rem;
+  line-height: 2.15;
+  z-index: 1;
+}
+
+.safety-message {
+  position: relative;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  z-index: 1;
+}
+
+.reference-line {
+  position: relative;
+  margin-top: 18px;
+  font-size: 0.88rem;
+  color: var(--parchment-muted);
+  z-index: 1;
+}
+.result-card.safety .reference-line { color: var(--muted); }
+
+.pending-flag {
+  position: relative;
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.72rem;
+  color: var(--gold);
+  background: rgba(184, 147, 62, 0.14);
+  padding: 3px 10px;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+.actions-row {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+.result-card .btn-ghost {
+  background: rgba(42, 32, 19, 0.08);
+  color: var(--parchment-ink);
+}
+.result-card .btn-ghost:hover { background: rgba(42, 32, 19, 0.14); }
+.result-card.safety .btn-ghost {
+  background: rgba(255,255,255,0.08);
+  color: var(--ink-text);
+}
+
+/* -- رسائل التفاعل: بطاقة داكنة هادئة، لا تنافس صفحة المخطوطة -- */
+.share-card {
+  margin-top: 22px;
+  background: var(--ink-2);
+  border-radius: 10px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  border: 1px solid rgba(217, 184, 107, 0.1);
+}
+.share-card p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .result-card { animation: none; }
+}

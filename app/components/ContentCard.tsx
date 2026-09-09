@@ -5,7 +5,7 @@ import type { Category, Content } from "@/lib/sakina";
 import { AudioPlayer } from "./AudioPlayer";
 import { SpeechButton } from "./SpeechButton";
 import { CategoryIcon } from "./CategoryIcon";
-import { surahNameFromReference } from "@/lib/audio";
+import { surahNameFromReference, ayahNumberFromReference } from "@/lib/audio";
 import { createShareImage, shareOrDownloadImage } from "@/lib/shareImage";
 import { getDuaForCategory } from "@/lib/sakina";
 
@@ -96,7 +96,11 @@ export function ContentCard({
       </div>
       
       {item.type === "QURAN" && typeof item.surah_number === "number" && (
-        <AudioPlayer surahNumber={item.surah_number} surahLabel={surahNameFromReference(item.reference)} />
+        <AudioPlayer 
+          surahNumber={item.surah_number} 
+          ayahNumber={ayahNumberFromReference(item.reference)} 
+          surahLabel={surahNameFromReference(item.reference)} 
+        />
       )}
       
       <div className="mt-4 flex gap-2">

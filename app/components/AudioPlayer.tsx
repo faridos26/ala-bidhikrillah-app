@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { RECITERS, surahAudioUrl } from "@/lib/audio";
+import { RECITERS, surahAudioUrl, ayahAudioUrl } from "@/lib/audio";
 import { readJSON, writeJSON } from "@/lib/storage";
 
 const RECITER_KEY = "sakina-reciter";
@@ -15,7 +15,15 @@ function formatTime(seconds: number) {
   return `${m}:${s}`;
 }
 
-export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; surahLabel: string }) {
+export function AudioPlayer({ 
+  surahNumber, 
+  ayahNumber, 
+  surahLabel 
+}: { 
+  surahNumber: number; 
+  ayahNumber?: number;
+  surahLabel: string 
+}) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [reciterId, setReciterId] = useState(RECITERS[0].id);
   const [playing, setPlaying] = useState(false);
@@ -23,13 +31,16 @@ export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; 
   const [error, setError] = useState(false);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [mode, setMode] = useState<"ayah" | "surah">("ayah");
 
   useEffect(() => {
     setReciterId(readJSON(RECITER_KEY, RECITERS[0].id));
   }, []);
 
   const reciter = RECITERS.find((r) => r.id === reciterId) ?? RECITERS[0];
-  const src = surahAudioUrl(reciter, surahNumber);
+  const src = mode === "ayah" && ayahNumber 
+    ? ayahAudioUrl(reciter, surahNumber, ayahNumber) 
+    : surahAudioUrl(reciter, surahNumber);
 
   function toggle() {
     const audio = audioRef.current;
@@ -53,7 +64,22 @@ export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; 
     setReciterId(id);
     writeJSON(RECITER_KEY, id);
     if (wasPlaying) {
-      // Give the <audio> element a tick to pick up the new src (key change) before resuming.
+      setTimeout(() => {
+        setLoading(true);
+        audioRef.current?.play().catch(() => {
+          setError(true);
+          setLoading(false);
+        });
+      }, 60);
+    }
+  }
+
+  function changeMode(newMode: "ayah" | "surah") {
+    const wasPlaying = playing;
+    audioRef.current?.pause();
+    setPlaying(false);
+    setMode(newMode);
+    if (wasPlaying) {
       setTimeout(() => {
         setLoading(true);
         audioRef.current?.play().catch(() => {
@@ -86,10 +112,11 @@ export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; 
           setPlaying(false);
         }}
       />
+      
       <div className="flex items-center gap-3">
         <button
           onClick={toggle}
-          aria-label={playing ? "إيقاف الاستماع" : `استماع لسورة ${surahLabel}`}
+          aria-label={playing ? "إيقاف الاستماع" : `استماع ${mode === "ayah" ? "للآية" : "للسورة"}`}
           className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-accent text-white transition-colors hover:bg-accentStrong"
         >
           {loading ? (
@@ -105,7 +132,11 @@ export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; 
         </button>
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between text-xs text-muted">
-            <span>استماع لسورة {surahLabel} كاملة</span>
+            <span>
+              {mode === "ayah" && ayahNumber 
+                ? `استماع للآية ${ayahNumber} من سورة ${surahLabel}` 
+                : `استماع لسورة ${surahLabel} كاملة`}
+            </span>
             <span>
               {formatTime(progress)} / {formatTime(duration)}
             </span>
@@ -118,6 +149,34 @@ export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; 
           </div>
         </div>
       </div>
+
+      {/* اختيار الوضع */}
+      {ayahNumber && (
+        <div className="mt-3 flex gap-1.5">
+          <button
+            onClick={() => changeMode("ayah")}
+            className={`flex-1 rounded-lg border px-3 py-2 text-xs font-bold transition-colors ${
+              mode === "ayah"
+                ? "border-accent bg-accent/10 text-accentStrong"
+                : "border-border text-muted hover:text-ink"
+            }`}
+          >
+            🎯 الآية فقط
+          </button>
+          <button
+            onClick={() => changeMode("surah")}
+            className={`flex-1 rounded-lg border px-3 py-2 text-xs font-bold transition-colors ${
+              mode === "surah"
+                ? "border-accent bg-accent/10 text-accentStrong"
+                : "border-border text-muted hover:text-ink"
+            }`}
+          >
+            📖 السورة كاملة
+          </button>
+        </div>
+      )}
+
+      {/* اختيار القارئ */}
       <div className="mt-3 flex items-center justify-between gap-2">
         <label className="text-[11px] text-muted" htmlFor={`reciter-${surahNumber}-${surahLabel}`}>
           القارئ
@@ -135,14 +194,12 @@ export function AudioPlayer({ surahNumber, surahLabel }: { surahNumber: number; 
           ))}
         </select>
       </div>
+
       {error && (
         <p className="mt-2 text-[11px] text-danger">
           تعذر تحميل الصوت الآن. تحقق من الاتصال بالإنترنت أو جرّب قارئاً آخر.
         </p>
       )}
-      <p className="mt-2 text-[10px] leading-relaxed text-muted/80">
-        تلاوة للسورة كاملة من مصدر موثوق (mp3quran.net)، وقد لا تبدأ عند هذه الآية بالتحديد.
-      </p>
     </div>
   );
 }

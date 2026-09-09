@@ -1,10 +1,11 @@
-export type TabKey = "home" | "categories" | "stories" | "shahada" | "tasbih" | "favorites";
+export type TabKey = "home" | "categories" | "stories" | "shahada" | "mosques" | "tasbih" | "favorites";
 
 const tabs: { key: TabKey; label: string }[] = [
   { key: "home", label: "الرئيسية" },
   { key: "categories", label: "المواضيع" },
   { key: "stories", label: "قصص" },
   { key: "shahada", label: "الشهادة" },
+  { key: "mosques", label: "المساجد" },
   { key: "tasbih", label: "التسبيح" },
   { key: "favorites", label: "المحفوظات" },
 ];

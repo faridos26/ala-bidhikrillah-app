@@ -1,0 +1,42 @@
+{
+  "shahada": {
+    "arabic_full": "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللهِ",
+    "transliteration": "Ash-hadu an la ilaha illa Allah, wa ash-hadu anna Muhammadan rasul Allah",
+    "english_translation": "I bear witness that there is no deity but Allah, and I bear witness that Muhammad is the Messenger of Allah",
+    "french_translation": "Je témoigne qu'il n'y a de divinité qu'Allah, et je témoigne que Muhammad est le Messager d'Allah",
+    "words": [
+      {
+        "arabic": "أَشْهَدُ",
+        "transliteration": "Ash-hadu",
+        "meaning": "I bear witness"
+      },
+      {
+        "arabic": "أَنْ لَا إِلَٰهَ",
+        "transliteration": "an la ilaha",
+        "meaning": "that there is no deity"
+      },
+      {
+        "arabic": "إِلَّا اللهُ",
+        "transliteration": "illa Allah",
+        "meaning": "but Allah"
+      },
+      {
+        "arabic": "وَأَشْهَدُ",
+        "transliteration": "wa ash-hadu",
+        "meaning": "and I bear witness"
+      },
+      {
+        "arabic": "أَنَّ مُحَمَّدًا",
+        "transliteration": "anna Muhammadan",
+        "meaning": "that Muhammad"
+      },
+      {
+        "arabic": "رَسُولُ اللهِ",
+        "transliteration": "rasul Allah",
+        "meaning": "is the Messenger of Allah"
+      }
+    ],
+    "audio_source": "https://server7.mp3quran.net/afs/001.mp3",
+    "note": "للاستماع للنطق الصحيح، اضغط على زر الاستماع أدناه"
+  }
+}

@@ -15,6 +15,7 @@ import { SearchResults } from "./components/SearchResults";
 import { TasbihCounter } from "./components/TasbihCounter";
 import { FavoritesList } from "./components/FavoritesList";
 import { StoriesSection } from "./components/StoriesSection";
+import { ShahadaSection } from "./components/ShahadaSection";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
@@ -102,6 +103,8 @@ export default function Home() {
       )}
 
       {tab === "stories" && <StoriesSection />}
+
+      {tab === "shahada" && <ShahadaSection />}
 
       {tab === "tasbih" && <TasbihCounter />}
 

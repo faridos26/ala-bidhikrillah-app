@@ -10,7 +10,7 @@
       "style": "عمارة إسلامية عريقة",
       "capacity": "أكثر من 2.5 مليون مصلٍ",
       "description": "أعظم مسجد في الإسلام، يضم الكعبة المشرفة وقبلة المسلمين. يفد إليه ملايين الحجاج والمعتمرين سنويًا.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Al-Haram_mosque_-_Flickr_-_Al_Jazeera_English.jpg/800px-Al-Haram_mosque_-_Flickr_-_Al_Jazeera_English.jpg",
+      "image": "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=800&h=500&fit=crop",
       "icon": "🕋"
     },
     {
@@ -23,7 +23,7 @@
       "style": "عمارة إسلامية كلاسيكية",
       "capacity": "أكثر من مليون مصلٍ",
       "description": "ثاني أقدس مسجد في الإسلام، بناه النبي محمد ﷺ بيديه الشريفتين، ويضم قبره الشريف.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Prophet%27s_Mosque_-_Medina.jpg/800px-Prophet%27s_Mosque_-_Medina.jpg",
+      "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&h=500&fit=crop",
       "icon": "🌙"
     },
     {
@@ -36,7 +36,7 @@
       "style": "عمارة أموية",
       "capacity": "أكثر من 400,000 مصلٍ",
       "description": "ثالث أقدس مسجد في الإسلام، ومسرى النبي محمد ﷺ في رحلة الإسراء والمعراج.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Omar_Mosque_%28Ayyubid_period%29.jpg/800px-Omar_Mosque_%28Ayyubid_period%29.jpg",
+      "image": "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=800&h=500&fit=crop",
       "icon": "🏛️"
     },
     {
@@ -75,7 +75,7 @@
       "style": "عمارة عثمانية",
       "capacity": "10,000 مصلٍ",
       "description": "تحفة معمارية عثمانية رائعة، سُمي بالجامع الأزرق لبلاطه الأزرق الجميل من الداخل.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Blue_Mosque_%281448596104%29.jpg/800px-Blue_Mosque_%281448596104%29.jpg",
+      "image": "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&h=500&fit=crop",
       "icon": "💙"
     },
     {
@@ -88,7 +88,7 @@
       "style": "بيزنطية - عثمانية",
       "capacity": "آلاف المصلين",
       "description": "من أعظم المعالم المعمارية في العالم، بُنيت ككنيسة ثم تحولت إلى مسجد، وتضم قبة هائلة مذهلة.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Hagia_Sophia_Mars_2013.jpg/800px-Hagia_Sophia_Mars_2013.jpg",
+      "image": "https://images.unsplash.com/photo-1533854775446-95c4609da544?w=800&h=500&fit=crop",
       "icon": "✨"
     },
     {
@@ -127,7 +127,7 @@
       "style": "عمارة حديثة فاخرة",
       "capacity": "40,000 مصلٍ",
       "description": "من أفخم المساجد في العالم، يضم أكبر سجادة يدوية في العالم وثريات كريستالية مذهلة.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Sheikh_Zayed_Grand_Mosque_%281%29.jpg/800px-Sheikh_Zayed_Grand_Mosque_%281%29.jpg",
+      "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=500&fit=crop",
       "icon": "💎"
     },
     {

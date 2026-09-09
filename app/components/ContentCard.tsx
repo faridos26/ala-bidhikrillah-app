@@ -4,6 +4,7 @@ import { useState } from "react";
 import type { Category, Content } from "@/lib/sakina";
 import { AudioPlayer } from "./AudioPlayer";
 import { SpeechButton } from "./SpeechButton";
+import { CategoryIcon } from "./CategoryIcon";
 import { surahNameFromReference } from "@/lib/audio";
 import { createShareImage, shareOrDownloadImage } from "@/lib/shareImage";
 import { getDuaForCategory } from "@/lib/sakina";
@@ -60,9 +61,12 @@ export function ContentCard({
   return (
     <article className="animate-rise rounded-2xl border border-border bg-surfaceMuted/40 p-5">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-extrabold text-accent">
-          {item.type === "QURAN" ? "آية من القرآن الكريم" : item.type}
-        </span>
+        <div className="flex items-center gap-2">
+          <CategoryIcon code={category.code} size="sm" />
+          <span className="text-xs font-extrabold text-accent">
+            {item.type === "QURAN" ? "آية من القرآن الكريم" : item.type}
+          </span>
+        </div>
         <button
           onClick={onFavorite}
           aria-pressed={favorite}

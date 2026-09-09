@@ -1,4 +1,4 @@
-import data from "../data/sakina_v1_6.json"
+import data from "@/data/sakina_v1_6.json";
 
 export type Content = {
   type: string;
@@ -6,6 +6,7 @@ export type Content = {
   source: string;
   reference: string;
   status: string;
+  surah_number?: number;
   [key: string]: unknown;
 };
 

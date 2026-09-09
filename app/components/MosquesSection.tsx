@@ -15,16 +15,81 @@ type Mosque = {
   description: string;
   image: string;
   icon: string;
+  pattern: string;
+};
+
+// أنماط هندسية إسلامية مختلفة لكل مسجد
+const patterns: Record<string, { bg: string; gradient: string; border: string }> = {
+  pattern_makkah: { bg: "#1a0f0a", gradient: "from-[#3d2417] to-[#1a0f0a]", border: "#c9a13b" },
+  pattern_madinah: { bg: "#0a1f14", gradient: "from-[#1a3d2a] to-[#0a1f14]", border: "#4ade80" },
+  pattern_quds: { bg: "#1a1410", gradient: "from-[#3d3020] to-[#1a1410]", border: "#c9a13b" },
+  pattern_qayrawan: { bg: "#141d14", gradient: "from-[#2a3d2a] to-[#141d14]", border: "#a3c9a3" },
+  pattern_zitouna: { bg: "#101a14", gradient: "from-[#1a3d2a] to-[#101a14]", border: "#8bc9a3" },
+  pattern_blue: { bg: "#0a1420", gradient: "from-[#1a2a4a] to-[#0a1420]", border: "#60a5fa" },
+  pattern_hagia: { bg: "#141014", gradient: "from-[#3d1a3d] to-[#141014]", border: "#c084fc" },
+  pattern_cordoba: { bg: "#1a0f0a", gradient: "from-[#4a2a1a] to-[#1a0f0a]", border: "#f59e0b" },
+  pattern_faisal: { bg: "#0a1a14", gradient: "from-[#1a3d2a] to-[#0a1a14]", border: "#34d399" },
+  pattern_zayed: { bg: "#0a141a", gradient: "from-[#1a3a5a] to-[#0a141a]", border: "#60a5fa" },
+  pattern_hassan: { bg: "#0a1a1a", gradient: "from-[#1a4a4a] to-[#0a1a1a]", border: "#2dd4bf" },
+  pattern_suleymaniye: { bg: "#141410", gradient: "from-[#3d3d1a] to-[#141410]", border: "#eab308" },
 };
 
 export function MosquesSection() {
   const [selectedMosque, setSelectedMosque] = useState<Mosque | null>(null);
-  const [imageError, setImageError] = useState<Record<string, boolean>>({});
 
   const mosques = mosquesData.mosques as Mosque[];
 
-  function handleImageError(id: string) {
-    setImageError((prev) => ({ ...prev, [id]: true }));
+  function PatternDisplay({ mosque, large = false }: { mosque: Mosque; large?: boolean }) {
+    const pattern = patterns[mosque.pattern] || patterns.pattern_makkah;
+    return (
+      <div
+        className={`relative grid place-items-center overflow-hidden ${large ? "h-64" : "h-40"}`}
+        style={{
+          background: `linear-gradient(135deg, ${pattern.bg}, ${pattern.gradient})`,
+          borderBottom: `3px solid ${pattern.border}`,
+        }}
+      >
+        {/* زخرفة هندسية */}
+        <svg
+          viewBox="0 0 200 200"
+          className={`absolute inset-0 h-full w-full opacity-20 ${large ? "h-64" : "h-40"}`}
+        >
+          <defs>
+            <pattern id={`grid-${mosque.id}`} width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke={pattern.border} strokeWidth="0.5" />
+            </pattern>
+          </defs>
+          <rect width="200" height="200" fill={`url(#grid-${mosque.id})`} />
+          <path
+            d="M100 20 L120 80 L180 100 L120 120 L100 180 L80 120 L20 100 L80 80 Z"
+            fill="none"
+            stroke={pattern.border}
+            strokeWidth="1.5"
+          />
+          <path
+            d="M100 40 L115 85 L160 100 L115 115 L100 160 L85 115 L40 100 L85 85 Z"
+            fill="none"
+            stroke={pattern.border}
+            strokeWidth="1"
+            opacity="0.7"
+          />
+          <circle cx="100" cy="100" r="20" fill="none" stroke={pattern.border} strokeWidth="0.8" />
+        </svg>
+
+        {/* الأيقونة */}
+        <span className={`relative z-10 ${large ? "text-8xl" : "text-6xl"} drop-shadow-lg`}>
+          {mosque.icon}
+        </span>
+
+        {/* اسم المسجد */}
+        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 text-center">
+          <h3 className={`font-extrabold text-white ${large ? "text-2xl" : "text-lg"}`}>
+            {mosque.name_ar}
+          </h3>
+          {large && <p className="text-sm text-white/80">{mosque.name_en}</p>}
+        </div>
+      </div>
+    );
   }
 
   if (selectedMosque) {
@@ -38,24 +103,7 @@ export function MosquesSection() {
         </button>
 
         <article className="overflow-hidden rounded-2xl border border-border bg-surfaceMuted/40">
-          <div className="relative">
-            {!imageError[selectedMosque.id] ? (
-              <img
-                src={selectedMosque.image}
-                alt={selectedMosque.name_ar}
-                className="h-72 w-full object-cover"
-                onError={() => handleImageError(selectedMosque.id)}
-              />
-            ) : (
-              <div className="grid h-72 w-full place-items-center bg-gradient-to-b from-accent/20 to-surface">
-                <span className="text-8xl">{selectedMosque.icon}</span>
-              </div>
-            )}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-              <h2 className="text-2xl font-extrabold text-white">{selectedMosque.name_ar}</h2>
-              <p className="text-sm text-white/80">{selectedMosque.name_en}</p>
-            </div>
-          </div>
+          <PatternDisplay mosque={selectedMosque} large />
 
           <div className="p-6">
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -99,24 +147,7 @@ export function MosquesSection() {
           onClick={() => setSelectedMosque(mosque)}
           className="animate-rise group overflow-hidden rounded-2xl border border-border bg-surfaceMuted/40 text-right transition-all hover:border-accent hover:shadow-soft"
         >
-          <div className="relative h-40 overflow-hidden">
-            {!imageError[mosque.id] ? (
-              <img
-                src={mosque.image}
-                alt={mosque.name_ar}
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                onError={() => handleImageError(mosque.id)}
-              />
-            ) : (
-              <div className="grid h-full w-full place-items-center bg-gradient-to-b from-accent/20 to-surface">
-                <span className="text-6xl">{mosque.icon}</span>
-              </div>
-            )}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
-              <h3 className="text-lg font-extrabold text-white">{mosque.name_ar}</h3>
-              <p className="text-xs text-white/80">{mosque.name_en}</p>
-            </div>
-          </div>
+          <PatternDisplay mosque={mosque} />
           <div className="p-4">
             <p className="text-xs font-bold text-accentStrong">
               📍 {mosque.city} - {mosque.country}

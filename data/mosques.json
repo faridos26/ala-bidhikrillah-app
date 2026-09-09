@@ -10,8 +10,9 @@
       "style": "عمارة إسلامية عريقة",
       "capacity": "أكثر من 2.5 مليون مصلٍ",
       "description": "أعظم مسجد في الإسلام، يضم الكعبة المشرفة وقبلة المسلمين. يفد إليه ملايين الحجاج والمعتمرين سنويًا.",
-      "image": "https://images.unsplash.com/photo-1565084888279-aca607ecce0c?w=800&h=500&fit=crop",
-      "icon": "🕋"
+      "image": "",
+      "icon": "🕋",
+      "pattern": "pattern_makkah"
     },
     {
       "id": "madinah",
@@ -23,8 +24,9 @@
       "style": "عمارة إسلامية كلاسيكية",
       "capacity": "أكثر من مليون مصلٍ",
       "description": "ثاني أقدس مسجد في الإسلام، بناه النبي محمد ﷺ بيديه الشريفتين، ويضم قبره الشريف.",
-      "image": "https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=800&h=500&fit=crop",
-      "icon": "🌙"
+      "image": "",
+      "icon": "🌙",
+      "pattern": "pattern_madinah"
     },
     {
       "id": "quds",
@@ -36,8 +38,9 @@
       "style": "عمارة أموية",
       "capacity": "أكثر من 400,000 مصلٍ",
       "description": "ثالث أقدس مسجد في الإسلام، ومسرى النبي محمد ﷺ في رحلة الإسراء والمعراج.",
-      "image": "https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=800&h=500&fit=crop",
-      "icon": "🏛️"
+      "image": "",
+      "icon": "🏛️",
+      "pattern": "pattern_quds"
     },
     {
       "id": "qayrawan",
@@ -49,8 +52,9 @@
       "style": "عمارة أموية وعباسية",
       "capacity": "آلاف المصلين",
       "description": "أقدم وأهم مسجد في المغرب العربي، أسسه عقبة بن نافع. يعتبر من أقدم المنارات في العالم الإسلامي.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Great_Mosque_of_Kairouan_1.jpg/800px-Great_Mosque_of_Kairouan_1.jpg",
-      "icon": "🕌"
+      "image": "",
+      "icon": "🕌",
+      "pattern": "pattern_qayrawan"
     },
     {
       "id": "zitouna",
@@ -62,47 +66,51 @@
       "style": "عمارة أموية",
       "capacity": "آلاف المصلين",
       "description": "من أقدم وأعرق المساجد في العالم الإسلامي، كان جامعة علمية كبرى تخرّج منها علماء كبار.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/View_of_the_Zaytuna_Mosque%27s_main_minaret.jpg/800px-View_of_the_Zaytuna_Mosque%27s_main_minaret.jpg",
-      "icon": "🕌"
+      "image": "",
+      "icon": "🕌",
+      "pattern": "pattern_zitouna"
     },
     {
       "id": "blue_mosque",
       "name_ar": "الجامع الأزرق",
-      "name_en": "The Blue Mosque (Sultan Ahmed Mosque)",
+      "name_en": "The Blue Mosque",
       "city": "إسطنبول",
       "country": "تركيا",
       "year_built": "1616 م",
       "style": "عمارة عثمانية",
       "capacity": "10,000 مصلٍ",
       "description": "تحفة معمارية عثمانية رائعة، سُمي بالجامع الأزرق لبلاطه الأزرق الجميل من الداخل.",
-      "image": "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800&h=500&fit=crop",
-      "icon": "💙"
+      "image": "",
+      "icon": "💙",
+      "pattern": "pattern_blue"
     },
     {
       "id": "hagia_sophia",
       "name_ar": "آيا صوفيا",
-      "name_en": "Hagia Sophia Grand Mosque",
+      "name_en": "Hagia Sophia",
       "city": "إسطنبول",
       "country": "تركيا",
       "year_built": "537 م",
       "style": "بيزنطية - عثمانية",
       "capacity": "آلاف المصلين",
       "description": "من أعظم المعالم المعمارية في العالم، بُنيت ككنيسة ثم تحولت إلى مسجد، وتضم قبة هائلة مذهلة.",
-      "image": "https://images.unsplash.com/photo-1533854775446-95c4609da544?w=800&h=500&fit=crop",
-      "icon": "✨"
+      "image": "",
+      "icon": "✨",
+      "pattern": "pattern_hagia"
     },
     {
       "id": "cordoba",
       "name_ar": "جامع قرطبة",
-      "name_en": "Mosque-Cathedral of Córdoba",
+      "name_en": "Mosque of Córdoba",
       "city": "قرطبة",
       "country": "إسبانيا",
       "year_built": "784 م",
       "style": "أندلسية أموية",
-      "capacity": "آلاف المصلين (تاريخياً)",
-      "description": "من أجمل المعالم الأندلسية، يشتهر بأعمدته المزدوجة وأقواسه المذهلة المخططة باللونين الأحمر والأبيض.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mosque_Cordoba.jpg/800px-Mosque_Cordoba.jpg",
-      "icon": "🏛️"
+      "capacity": "آلاف المصلين",
+      "description": "من أجمل المعالم الأندلسية، يشتهر بأعمدته المزدوجة وأقواسه المذهلة.",
+      "image": "",
+      "icon": "🏛️",
+      "pattern": "pattern_cordoba"
     },
     {
       "id": "faisal",
@@ -113,9 +121,10 @@
       "year_built": "1986 م",
       "style": "عمارة حديثة",
       "capacity": "300,000 مصلٍ",
-      "description": "أكبر مسجد في جنوب آسيا، بتصميم فريد يشبه الخيمة البدوية، يقع على سفوح جبال الهيمالايا.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Faisal_Mosque%2C_Islamabad_%286%29.jpg/800px-Faisal_Mosque%2C_Islamabad_%286%29.jpg",
-      "icon": "⛰️"
+      "description": "أكبر مسجد في جنوب آسيا، بتصميم فريد يشبه الخيمة البدوية.",
+      "image": "",
+      "icon": "⛰️",
+      "pattern": "pattern_faisal"
     },
     {
       "id": "abu_dhabi",
@@ -126,9 +135,10 @@
       "year_built": "2007 م",
       "style": "عمارة حديثة فاخرة",
       "capacity": "40,000 مصلٍ",
-      "description": "من أفخم المساجد في العالم، يضم أكبر سجادة يدوية في العالم وثريات كريستالية مذهلة.",
-      "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=500&fit=crop",
-      "icon": "💎"
+      "description": "من أفخم المساجد في العالم، يضم أكبر سجادة يدوية في العالم.",
+      "image": "",
+      "icon": "💎",
+      "pattern": "pattern_zayed"
     },
     {
       "id": "hassan_ii",
@@ -139,9 +149,10 @@
       "year_built": "1993 م",
       "style": "عمارة مغربية حديثة",
       "capacity": "105,000 مصلٍ",
-      "description": "من أكبر المساجد في العالم، يقع على المحيط الأطلسي مباشرة، بمئذنة هي الأعلى في العالم (210 مترًا).",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Hassan_II_Mosque%2C_Casablanca_%282%29.jpg/800px-Hassan_II_Mosque%2C_Casablanca_%282%29.jpg",
-      "icon": "🌊"
+      "description": "من أكبر المساجد في العالم، يقع على المحيط الأطلسي مباشرة.",
+      "image": "",
+      "icon": "🌊",
+      "pattern": "pattern_hassan"
     },
     {
       "id": "suleymaniye",
@@ -152,9 +163,10 @@
       "year_built": "1557 م",
       "style": "عمارة عثمانية",
       "capacity": "10,000 مصلٍ",
-      "description": "من أروع أعمال المعماري سنان، يطل على البوسفور ويتميز بقبابه المتدرجة ومآذنه الأربع.",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/S%C3%BCleymaniye_Mosque%2C_Istanbul_%281%29.jpg/800px-S%C3%BCleymaniye_Mosque%2C_Istanbul_%281%29.jpg",
-      "icon": "🏰"
+      "description": "من أروع أعمال المعماري سنان، يطل على البوسفور.",
+      "image": "",
+      "icon": "🏰",
+      "pattern": "pattern_suleymaniye"
     }
   ]
 }

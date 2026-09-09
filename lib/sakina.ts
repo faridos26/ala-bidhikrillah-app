@@ -25,59 +25,70 @@ export const sakinaData = data as {
   engagement_prompts: unknown[];
 };
 
-export const THRESHOLD = 0.5;
-
-function normalize(text: string) {
+function normalizeArabic(text: string): string {
   return text
-    .toLowerCase()
-    .replace(/[\u064B-\u0652\u0670\u0640]/g, "")
-    .replace(/[\u0622\u0623\u0625\u0671]/g, "\u0627")
-    .replace(/\u0649/g, "\u064A")
-    .replace(/\u0624/g, "\u0648")
-    .replace(/\u0626/g, "\u064A")
-    .replace(/\s+/g, " ")
+    .replace(/[\u064B-\u0652\u0670\u0640]/g, "") // إزالة التشكيل
+    .replace(/[\u0622\u0623\u0625\u0671]/g, "\u0627") // توحيد الألف
+    .replace(/\u0649/g, "\u064A") // توحيد الياء
+    .replace(/\u0624/g, "\u0648") // توحيد الواو
+    .replace(/\u0626/g, "\u064A") // توحيد الياء المهموزة
+    .replace(/[^\u0621-\u064A\u0660-\u0669a-zA-Z0-9\s]/g, "") // إزالة الرموز
+    .replace(/\s+/g, " ") // توحيد المسافات
     .trim();
 }
 
-function matchesKeyword(input: string, keyword: string) {
-  const k = normalize(keyword);
-  if (!k) return false;
-  const escaped = k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`(^|[^\\u0621-\\u064A\\u0660-\\u0669a-z0-9])${escaped}($|[^\\u0621-\\u064A\\u0660-\\u0669a-z0-9])`, "i").test(input);
-}
-
-function safetyCategory() {
-  return sakinaData.categories.find((c) => c.code === "SAFETY_CRISIS")!;
+function containsKeyword(input: string, keyword: string): boolean {
+  const normalizedInput = normalizeArabic(input);
+  const normalizedKeyword = normalizeArabic(keyword);
+  if (!normalizedKeyword) return false;
+  return normalizedInput.includes(normalizedKeyword);
 }
 
 export function classify(text: string) {
-  const input = normalize(text || "");
-  if (!input) return fallback();
+  const input = normalizeArabic(text || "");
+  
+  if (!input) {
+    return {
+      category: sakinaData.categories.find((c) => c.code === "GENERAL_FALLBACK")!,
+      score: 0,
+      matches: [] as string[],
+    };
+  }
 
-  // Safety is always evaluated first so an emergency phrase cannot be masked by another category.
-  const safety = safetyCategory();
-  const safetyMatches = safety.keywords.filter((keyword) => matchesKeyword(input, keyword));
-  if (safetyMatches.length) {
+  // التحقق من حالة الطوارئ أولاً
+  const safety = sakinaData.categories.find((c) => c.code === "SAFETY_CRISIS")!;
+  const safetyMatches = safety.keywords.filter((kw) => containsKeyword(input, kw));
+  if (safetyMatches.length > 0) {
     return { category: safety, score: 1, matches: safetyMatches };
   }
 
-  let best: { category: Category; score: number; matches: string[] } | null = null;
+  // البحث في باقي الفئات
+  let bestCategory: Category | null = null;
+  let bestMatches: string[] = [];
 
   for (const category of sakinaData.categories) {
     if (category.is_safety_route) continue;
-    const matches = category.keywords.filter((keyword) => matchesKeyword(input, keyword));
-    if (!matches.length) continue;
-    const score = Math.min(1, 0.55 + matches.length * 0.15);
-    if (!best || score > best.score) best = { category, score, matches };
+    const matches = category.keywords.filter((kw) => containsKeyword(input, kw));
+    if (matches.length > bestMatches.length) {
+      bestCategory = category;
+      bestMatches = matches;
+    }
   }
 
-  if (!best || best.score < THRESHOLD) return fallback();
-  return best;
-}
+  if (bestCategory && bestMatches.length > 0) {
+    return {
+      category: bestCategory,
+      score: Math.min(1, 0.6 + bestMatches.length * 0.1),
+      matches: bestMatches,
+    };
+  }
 
-export function fallback() {
-  const category = sakinaData.categories.find((c) => c.code === "GENERAL_FALLBACK")!;
-  return { category, score: 0, matches: [] as string[] };
+  // إذا لم نجد أي تطابق، نعود للمحتوى العام
+  return {
+    category: sakinaData.categories.find((c) => c.code === "GENERAL_FALLBACK")!,
+    score: 0,
+    matches: [] as string[],
+  };
 }
 
 export function verifiedContent(category: Category) {

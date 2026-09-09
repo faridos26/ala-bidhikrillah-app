@@ -1,4 +1,4 @@
-import data from "@/data/sakina_v1_6.json";
+import data from "../data/sakina_v1_6.json";
 
 export type Content = {
   type: string;
@@ -25,17 +25,16 @@ export const sakinaData = data as {
   engagement_prompts: unknown[];
 };
 
-export const THRESHOLD = 0.75;
+export const THRESHOLD = 0.5;
 
 function normalize(text: string) {
   return text
     .toLowerCase()
-    .replace(/[ًٌٍَُِّْـ]/g, "")
-    .replace(/[أإآٱ]/g, "ا")
-    .replace(/[ى]/g, "ي")
-    .replace(/[ؤ]/g, "و")
-    .replace(/[ئ]/g, "ي")
-    .replace(/[ًٌٍَُِّْ]/g, "")
+    .replace(/[\u064B-\u0652\u0670\u0640]/g, "")
+    .replace(/[\u0622\u0623\u0625\u0671]/g, "\u0627")
+    .replace(/\u0649/g, "\u064A")
+    .replace(/\u0624/g, "\u0648")
+    .replace(/\u0626/g, "\u064A")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -44,7 +43,7 @@ function matchesKeyword(input: string, keyword: string) {
   const k = normalize(keyword);
   if (!k) return false;
   const escaped = k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  return new RegExp(`(^|[^\u0621-\u064A\u0660-\u0669a-z0-9])${escaped}($|[^\u0621-\u064A\u0660-\u0669a-z0-9])`, "i").test(input);
+  return new RegExp(`(^|[^\\u0621-\\u064A\\u0660-\\u0669a-z0-9])${escaped}($|[^\\u0621-\\u064A\\u0660-\\u0669a-z0-9])`, "i").test(input);
 }
 
 function safetyCategory() {
@@ -52,7 +51,7 @@ function safetyCategory() {
 }
 
 export function classify(text: string) {
-  const input = normalize(text);
+  const input = normalize(text || "");
   if (!input) return fallback();
 
   // Safety is always evaluated first so an emergency phrase cannot be masked by another category.

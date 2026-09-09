@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { Category, Content } from "@/lib/sakina";
 import { AudioPlayer } from "./AudioPlayer";
+import { SpeechButton } from "./SpeechButton";
 import { surahNameFromReference } from "@/lib/audio";
 import { createShareImage, shareOrDownloadImage } from "@/lib/shareImage";
 import { getDuaForCategory } from "@/lib/sakina";
@@ -74,15 +75,26 @@ export function ContentCard({
           {favorite ? "♥" : "♡"}
         </button>
       </div>
+      
       <blockquote className="font-quran my-3 text-[22px] font-medium leading-[2.05]">
         ﴿{item.text_ar}﴾
       </blockquote>
+      
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <SpeechButton text={item.text_ar} />
+        {item.type === "HADITH" && (
+          <span className="text-[10px] text-muted">استماع للحديث</span>
+        )}
+      </div>
+      
       <div className="text-xs leading-[1.7] text-muted">
         {item.source} · {item.reference}
       </div>
+      
       {item.type === "QURAN" && typeof item.surah_number === "number" && (
         <AudioPlayer surahNumber={item.surah_number} surahLabel={surahNameFromReference(item.reference)} />
       )}
+      
       <div className="mt-4 flex gap-2">
         <button
           onClick={share}
@@ -112,10 +124,16 @@ export function ContentCard({
             <div className="mt-3 space-y-3">
               <div>
                 <p className="font-quran text-lg leading-[1.9]">{duaInfo.dua_ar}</p>
+                <div className="mt-2 flex items-center gap-2">
+                  <SpeechButton text={duaInfo.dua_ar} />
+                </div>
                 <p className="mt-1 text-xs text-muted">{duaInfo.source} · {duaInfo.reference}</p>
               </div>
               <div className="border-t border-accent/10 pt-3">
                 <p className="font-quran text-base leading-[1.8] text-accentStrong">{duaInfo.dhikr_ar}</p>
+                <div className="mt-2 flex items-center gap-2">
+                  <SpeechButton text={duaInfo.dhikr_ar} />
+                </div>
                 <p className="mt-1 text-xs text-muted">{duaInfo.dhikr_source}</p>
               </div>
             </div>

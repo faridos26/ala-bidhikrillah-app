@@ -5,6 +5,7 @@ import type { Category, Content } from "@/lib/sakina";
 import { AudioPlayer } from "./AudioPlayer";
 import { surahNameFromReference } from "@/lib/audio";
 import { createShareImage, shareOrDownloadImage } from "@/lib/shareImage";
+import { getDuaForCategory } from "@/lib/sakina";
 
 export function ContentCard({
   item,
@@ -20,6 +21,9 @@ export function ContentCard({
   const [copied, setCopied] = useState(false);
   const [imageBusy, setImageBusy] = useState(false);
   const [imageDone, setImageDone] = useState(false);
+  const [showDua, setShowDua] = useState(false);
+
+  const duaInfo = getDuaForCategory(category.code);
 
   async function shareAsImage() {
     setImageBusy(true);
@@ -94,6 +98,31 @@ export function ContentCard({
           {imageBusy ? "جارٍ التجهيز…" : imageDone ? "تم الحفظ" : "مشاركة كصورة"}
         </button>
       </div>
+      
+      {duaInfo && (
+        <div className="mt-4 rounded-xl border border-accent/20 bg-accent/5 p-4">
+          <button
+            onClick={() => setShowDua(!showDua)}
+            className="flex w-full items-center justify-between text-sm font-bold text-accentStrong"
+          >
+            <span>🤲 دعاء وذكر مناسب</span>
+            <span>{showDua ? "▲" : "▼"}</span>
+          </button>
+          {showDua && (
+            <div className="mt-3 space-y-3">
+              <div>
+                <p className="font-quran text-lg leading-[1.9]">{duaInfo.dua_ar}</p>
+                <p className="mt-1 text-xs text-muted">{duaInfo.source} · {duaInfo.reference}</p>
+              </div>
+              <div className="border-t border-accent/10 pt-3">
+                <p className="font-quran text-base leading-[1.8] text-accentStrong">{duaInfo.dhikr_ar}</p>
+                <p className="mt-1 text-xs text-muted">{duaInfo.dhikr_source}</p>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+      
       <div className="mt-3 text-[11px] leading-[1.7] text-muted/80">
         اختير من المحتوى الموثّق المرتبط بتصنيف «{category.name_ar}».
       </div>

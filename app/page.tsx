@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -21,6 +20,7 @@ import { ShahadaSection } from "./components/ShahadaSection";
 import { MosquesSection } from "./components/MosquesSection";
 import { AdhanSection } from "./components/AdhanSection";
 import { PrayerTimesSection } from "./components/PrayerTimesSection";
+import { ReadPageButton } from "./components/ReadPageButton";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
@@ -41,6 +41,22 @@ export default function Home() {
     return allContent.filter(({ content: item }) => item.text_ar.includes(q) || item.reference.includes(q));
   }, [search, allContent]);
 
+  // النص الذي سيُقرأ بصوت عالٍ حسب القسم الحالي
+  const textToRead = useMemo(() => {
+    if (tab === "home" && result) {
+      const parts: string[] = [];
+      parts.push(`تصنيف حالتك: ${result.category.name_ar}.`);
+      content.forEach((item, i) => {
+        parts.push(`محتوى ${i + 1}: ${item.text_ar}. المرجع: ${item.reference}.`);
+      });
+      return parts.join(" ");
+    }
+    if (tab === "home") {
+      return "خذ لحظة واذكر الله. اكتب ما يثقل قلبك أو اختر من الإيموجي كيف تشعر.";
+    }
+    return "";
+  }, [tab, result, content]);
+
   function handleSubmit(value: string) {
     setSubmitted(value);
     setTab("home");
@@ -56,14 +72,13 @@ export default function Home() {
     setText(label);
     setSubmitted(label);
     setTab("home");
-    // التمرير للأسفل لرؤية النتيجة
     setTimeout(() => {
       document.getElementById("result-anchor")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }, 100);
   }
 
   return (
-    <main className="mx-auto w-[min(960px,calc(100%-28px))] pb-9 pt-4">
+    <main className="mx-auto w-[min(960px,calc(100%-28px))] pb-24 pt-4">
       <Header />
       <NavTabs active={tab} onChange={setTab} favoritesCount={favorites.length} />
 
@@ -139,6 +154,9 @@ export default function Home() {
       {tab === "favorites" && <FavoritesList items={favoriteItems} onToggleFavorite={toggleFavorite} />}
 
       <Footer />
+
+      {/* زر اقرأ لي - يظهر فقط في الرئيسية */}
+      {tab === "home" && <ReadPageButton textToRead={textToRead} />}
     </main>
   );
 }

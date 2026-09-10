@@ -1,0 +1,87 @@
+{
+  "adhan": {
+    "title": "الأذان",
+    "title_en": "The Call to Prayer",
+    "introduction": "الأذان هو الإعلام بدخول وقت الصلاة بذكر مخصوص. وهو شعيرة عظيمة من شعائر الإسلام، لا يُترك في حضر ولا سفر.",
+    "phrases": [
+      {
+        "arabic": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ",
+        "transliteration": "Allahu Akbar, Allahu Akbar",
+        "meaning": "الله أكبر من كل شيء",
+        "repeat": 2
+      },
+      {
+        "arabic": "أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللهُ",
+        "transliteration": "Ash-hadu an la ilaha illa Allah",
+        "meaning": "أشهد أنه لا معبود بحق إلا الله",
+        "repeat": 2
+      },
+      {
+        "arabic": "أَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللهِ",
+        "transliteration": "Ash-hadu anna Muhammadan rasul Allah",
+        "meaning": "أشهد أن محمدًا رسول الله",
+        "repeat": 2
+      },
+      {
+        "arabic": "حَيَّ عَلَى الصَّلَاةِ",
+        "transliteration": "Hayya 'ala as-salah",
+        "meaning": "أقبل و تعال إلى الصلاة",
+        "repeat": 2
+      },
+      {
+        "arabic": "حَيَّ عَلَى الْفَلَاحِ",
+        "transliteration": "Hayya 'ala al-falah",
+        "meaning": "أقبل إلى الفلاح والنجاح",
+        "repeat": 2
+      },
+      {
+        "arabic": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ",
+        "transliteration": "Allahu Akbar, Allahu Akbar",
+        "meaning": "الله أكبر من كل شيء",
+        "repeat": 1
+      },
+      {
+        "arabic": "لَا إِلَٰهَ إِلَّا اللهُ",
+        "transliteration": "La ilaha illa Allah",
+        "meaning": "لا معبود بحق إلا الله",
+        "repeat": 1
+      }
+    ],
+    "adhan_audio": {
+      "makkah": {
+        "name": "أذان الحرم المكي",
+        "url": "https://www.islamcan.com/audio/adhan/azan1.mp3"
+      },
+      "madinah": {
+        "name": "أذان المسجد النبوي",
+        "url": "https://www.islamcan.com/audio/adhan/azan2.mp3"
+      },
+      "egypt": {
+        "name": "أذان مصري",
+        "url": "https://www.islamcan.com/audio/adhan/azan3.mp3"
+      },
+      "mishary": {
+        "name": "أذان مشاري العفاسي",
+        "url": "https://www.islamcan.com/audio/adhan/azan4.mp3"
+      }
+    },
+    "after_adhan": {
+      "dua_ar": "اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ",
+      "source": "صحيح البخاري",
+      "reference": "رقم 614"
+    },
+    "sunnah": [
+      "قول: «وأنا أشهد أن لا إله إلا الله وحده لا شريك له، وأن محمدًا عبده ورسوله، رضيت بالله ربًا، وبالإسلام دينًا، وبمحمد ﷺ رسولًا» عند سماع الشهادتين",
+      "الصلاة على النبي ﷺ بعد الأذان",
+      "قول: «اللهم رب هذه الدعوة التامة...» بعد الأذان",
+      "الدعاء بين الأذان والإقامة فإنه لا يُرد"
+    ],
+    "etiquette": [
+      "استقبال الأذان بالاستماع والإنصات",
+      "ترديد ما يقول المؤذن إلا في «حي على الصلاة» و«حي على الفلاح» فيقول: «لا حول ولا قوة إلا بالله»",
+      "الصلاة على النبي ﷺ بعد الأذان",
+      "الدعاء بعد الأذان",
+      "قول مثل ما يقول المؤذن في الإقامة"
+    ]
+  }
+}

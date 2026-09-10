@@ -1,4 +1,5 @@
 import { ThemeToggle } from "./ThemeToggle";
+import { ZoomToggle } from "./ZoomToggle";
 
 export function Header() {
   return (
@@ -14,6 +15,7 @@ export function Header() {
         className="me-auto h-2.5 w-2.5 rounded-full bg-gold shadow-[0_0_10px_var(--gold)]"
         title="المحتوى من قاعدة موثوقة"
       />
+      <ZoomToggle />
       <ThemeToggle />
     </header>
   );

@@ -180,4 +180,75 @@ body::before {
 
 .font-quran {
   font-family: var(--font-amiri), serif;
+}/* ============ وضع التكبير لضعاف البصر ============ */
+
+html.zoomed {
+  font-size: 125%;
+}
+
+html.zoomed .text-\[10px\],
+html.zoomed .text-\[11px\] {
+  font-size: 13px !important;
+}
+
+html.zoomed .text-xs {
+  font-size: 0.875rem !important;
+}
+
+html.zoomed .text-sm {
+  font-size: 1rem !important;
+}
+
+html.zoomed .text-base {
+  font-size: 1.125rem !important;
+}
+
+html.zoomed .text-lg {
+  font-size: 1.375rem !important;
+}
+
+html.zoomed .text-xl {
+  font-size: 1.5rem !important;
+}
+
+html.zoomed .text-2xl {
+  font-size: 1.75rem !important;
+}
+
+html.zoomed .text-3xl {
+  font-size: 2rem !important;
+}
+
+html.zoomed .font-quran {
+  line-height: 2.2 !important;
+}
+
+html.zoomed button {
+  min-height: 44px;
+}
+
+html.zoomed .mood-emoji {
+  font-size: 3rem !important;
+}
+
+/* زيادة المسافات للمساعدة على القراءة */
+html.zoomed article,
+html.zoomed section {
+  line-height: 1.9;
+}
+
+/* زيادة حجم الأيقونات في الأزرار */
+html.zoomed .grid.h-8.w-8 {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+html.zoomed .grid.h-10.w-10 {
+  height: 2.75rem;
+  width: 2.75rem;
+}
+
+html.zoomed .grid.h-11.w-11 {
+  height: 3rem;
+  width: 3rem;
 }

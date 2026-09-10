@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo, useState } from "react";
@@ -19,6 +20,7 @@ import { StoriesSection } from "./components/StoriesSection";
 import { ShahadaSection } from "./components/ShahadaSection";
 import { MosquesSection } from "./components/MosquesSection";
 import { AdhanSection } from "./components/AdhanSection";
+import { UmrahSection } from "./components/UmrahSection";
 import { PrayerTimesSection } from "./components/PrayerTimesSection";
 import { ReadPageButton } from "./components/ReadPageButton";
 import { Footer } from "./components/Footer";
@@ -148,6 +150,8 @@ export default function Home() {
       {tab === "mosques" && <MosquesSection />}
 
       {tab === "adhan" && <AdhanSection />}
+
+      {tab === "umrah" && <UmrahSection />}
 
       {tab === "tasbih" && <TasbihCounter />}
 

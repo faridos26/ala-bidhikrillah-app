@@ -1,4 +1,5 @@
-export type TabKey = "home" | "prayer" | "categories" | "stories" | "shahada" | "mosques" | "adhan" | "tasbih" | "favorites";
+
+  export type TabKey = "home" | "prayer" | "categories" | "stories" | "shahada" | "mosques" | "adhan" | "umrah" | "tasbih" | "favorites";
 
 const tabs: { key: TabKey; label: string }[] = [
   { key: "home", label: "الرئيسية" },
@@ -8,6 +9,7 @@ const tabs: { key: TabKey; label: string }[] = [
   { key: "shahada", label: "الشهادة" },
   { key: "mosques", label: "المساجد" },
   { key: "adhan", label: "الأذان" },
+  { key: "umrah", label: "العمرة" },
   { key: "tasbih", label: "التسبيح" },
   { key: "favorites", label: "المحفوظات" },
 ];

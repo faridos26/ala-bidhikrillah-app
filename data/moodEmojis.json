@@ -1,0 +1,116 @@
+{
+  "moods": [
+    {
+      "emoji": "😢",
+      "label_ar": "حزين",
+      "label_en": "Sad",
+      "category_code": "SADNESS_DISTRESS",
+      "color": "slate"
+    },
+    {
+      "emoji": "😰",
+      "label_ar": "قلق",
+      "label_en": "Anxious",
+      "category_code": "ANXIETY_FEAR",
+      "color": "sky"
+    },
+    {
+      "emoji": "😔",
+      "label_ar": "فاقد",
+      "label_en": "Grieving",
+      "category_code": "LOSS_CALAMITY",
+      "color": "purple"
+    },
+    {
+      "emoji": "🤒",
+      "label_ar": "مريض",
+      "label_en": "Sick",
+      "category_code": "ILLNESS_TRIAL",
+      "color": "emerald"
+    },
+    {
+      "emoji": "😞",
+      "label_ar": "ضيق الرزق",
+      "label_en": "Hardship",
+      "category_code": "RIZQ_HARDSHIP",
+      "color": "amber"
+    },
+    {
+      "emoji": "💪",
+      "label_ar": "أحتاج صبراً",
+      "label_en": "Patience",
+      "category_code": "PATIENCE_STEADFASTNESS",
+      "color": "green"
+    },
+    {
+      "emoji": "😶",
+      "label_ar": "وحيد",
+      "label_en": "Lonely",
+      "category_code": "LONELINESS_COMFORT",
+      "color": "cyan"
+    },
+    {
+      "emoji": "🌅",
+      "label_ar": "أمل",
+      "label_en": "Hopeful",
+      "category_code": "HOPE",
+      "color": "orange"
+    },
+    {
+      "emoji": "📚",
+      "label_ar": "دراسة",
+      "label_en": "Study",
+      "category_code": "STUDY_GUIDANCE",
+      "color": "blue"
+    },
+    {
+      "emoji": "🤔",
+      "label_ar": "حائر",
+      "label_en": "Confused",
+      "category_code": "GUIDANCE_DECISION",
+      "color": "teal"
+    },
+    {
+      "emoji": "🏆",
+      "label_ar": "ناجح",
+      "label_en": "Successful",
+      "category_code": "SUCCESS_ACHIEVEMENT",
+      "color": "red"
+    },
+    {
+      "emoji": "🤲",
+      "label_ar": "تائب",
+      "label_en": "Repentant",
+      "category_code": "REPENTANCE_REGRET",
+      "color": "indigo"
+    },
+    {
+      "emoji": "🌙",
+      "label_ar": "أستغفر",
+      "label_en": "Seeking Forgiveness",
+      "category_code": "FORGIVENESS_ISTIGHFAR",
+      "color": "violet"
+    },
+    {
+      "emoji": "😊",
+      "label_ar": "فرح",
+      "label_en": "Happy",
+      "category_code": "JOY_GRATITUDE",
+      "color": "pink"
+    },
+    {
+      "emoji": "👨‍👩‍👧",
+      "label_ar": "عائلتي",
+      "label_en": "Family",
+      "category_code": "FAMILY_KINSHIP",
+      "color": "amber"
+    },
+    {
+      "emoji": "💍",
+      "label_ar": "أبحث عن زواج",
+      "label_en": "Marriage",
+      "category_code": "MARRIAGE_SEEKING",
+      "color": "rose"
+    }
+  ]
+}

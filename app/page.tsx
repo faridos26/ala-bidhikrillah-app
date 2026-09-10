@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useMemo, useState } from "react";
@@ -6,6 +7,7 @@ import { useFavorites, favoriteId } from "@/lib/useFavorites";
 import { Header } from "./components/Header";
 import { NavTabs, TabKey } from "./components/NavTabs";
 import { Hero } from "./components/Hero";
+import { MoodPicker } from "./components/MoodPicker";
 import { SituationForm } from "./components/SituationForm";
 import { ResultPanel } from "./components/ResultPanel";
 import { DailyVerse } from "./components/DailyVerse";
@@ -50,6 +52,16 @@ export default function Home() {
     setTab("home");
   }
 
+  function handleMoodSelect(categoryCode: string, label: string) {
+    setText(label);
+    setSubmitted(label);
+    setTab("home");
+    // التمرير للأسفل لرؤية النتيجة
+    setTimeout(() => {
+      document.getElementById("result-anchor")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 100);
+  }
+
   return (
     <main className="mx-auto w-[min(960px,calc(100%-28px))] pb-9 pt-4">
       <Header />
@@ -60,16 +72,23 @@ export default function Home() {
           <Hero />
 
           <section className="rounded-3xl border border-border bg-surface p-7 shadow-soft">
-            <SituationForm text={text} onTextChange={setText} onSubmit={handleSubmit} />
-            {result && (
-              <ResultPanel
-                category={result.category}
-                score={result.score}
-                content={content}
-                favorites={favorites}
-                onToggleFavorite={toggleFavorite}
-              />
-            )}
+            <MoodPicker onSelect={handleMoodSelect} />
+
+            <div className="mt-6">
+              <SituationForm text={text} onTextChange={setText} onSubmit={handleSubmit} />
+            </div>
+
+            <div id="result-anchor">
+              {result && (
+                <ResultPanel
+                  category={result.category}
+                  score={result.score}
+                  content={content}
+                  favorites={favorites}
+                  onToggleFavorite={toggleFavorite}
+                />
+              )}
+            </div>
           </section>
 
           {daily && (

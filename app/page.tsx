@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useMemo, useState } from "react";
@@ -21,6 +20,7 @@ import { ShahadaSection } from "./components/ShahadaSection";
 import { MosquesSection } from "./components/MosquesSection";
 import { AdhanSection } from "./components/AdhanSection";
 import { UmrahSection } from "./components/UmrahSection";
+import { MadhabsSection } from "./components/MadhabsSection";
 import { PrayerTimesSection } from "./components/PrayerTimesSection";
 import { ReadPageButton } from "./components/ReadPageButton";
 import { Footer } from "./components/Footer";
@@ -43,7 +43,6 @@ export default function Home() {
     return allContent.filter(({ content: item }) => item.text_ar.includes(q) || item.reference.includes(q));
   }, [search, allContent]);
 
-  // النص الذي سيُقرأ بصوت عالٍ حسب القسم الحالي
   const textToRead = useMemo(() => {
     if (tab === "home" && result) {
       const parts: string[] = [];
@@ -153,13 +152,14 @@ export default function Home() {
 
       {tab === "umrah" && <UmrahSection />}
 
+      {tab === "madhabs" && <MadhabsSection />}
+
       {tab === "tasbih" && <TasbihCounter />}
 
       {tab === "favorites" && <FavoritesList items={favoriteItems} onToggleFavorite={toggleFavorite} />}
 
       <Footer />
 
-      {/* زر اقرأ لي - يظهر فقط في الرئيسية */}
       {tab === "home" && <ReadPageButton textToRead={textToRead} />}
     </main>
   );

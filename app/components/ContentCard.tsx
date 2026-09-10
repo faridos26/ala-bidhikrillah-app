@@ -64,7 +64,7 @@ export function ContentCard({
         <div className="flex items-center gap-2">
           <CategoryIcon code={category.code} size="sm" />
           <span className="text-xs font-extrabold text-accent">
-            {item.type === "QURAN" ? "آية من القرآن الكريم" : item.type}
+            {item.type === "QURAN" ? "آية من القرآن الكريم" : item.type === "HADITH" ? "حديث نبوي شريف" : item.type}
           </span>
         </div>
         <button
@@ -79,30 +79,36 @@ export function ContentCard({
           {favorite ? "♥" : "♡"}
         </button>
       </div>
-      
+
       <blockquote className="font-quran my-3 text-[22px] font-medium leading-[2.05]">
         ﴿{item.text_ar}﴾
       </blockquote>
-      
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <SpeechButton text={item.text_ar} />
-        {item.type === "HADITH" && (
-          <span className="text-[10px] text-muted">استماع للحديث</span>
-        )}
-      </div>
-      
+
       <div className="text-xs leading-[1.7] text-muted">
         {item.source} · {item.reference}
       </div>
-      
+
+      {/* مشغل الصوت */}
       {item.type === "QURAN" && typeof item.surah_number === "number" && (
-        <AudioPlayer 
-          surahNumber={item.surah_number} 
-          ayahNumber={ayahNumberFromReference(item.reference)} 
-          surahLabel={surahNameFromReference(item.reference)} 
+        <AudioPlayer
+          surahNumber={item.surah_number}
+          ayahNumber={ayahNumberFromReference(item.reference)}
+          ayahText={item.text_ar}
+          surahLabel={surahNameFromReference(item.reference)}
         />
       )}
-      
+
+      {/* للحديث: زر استماع فقط */}
+      {item.type === "HADITH" && (
+        <div className="mt-4 rounded-xl border border-accent/20 bg-accent/5 p-3">
+          <p className="mb-2 text-[11px] text-muted">
+            استماع للحديث بصوت خاشع
+          </p>
+          <SpeechButton text={item.text_ar} variant="large" />
+        </div>
+      )}
+
+      {/* أزرار المشاركة */}
       <div className="mt-4 flex gap-2">
         <button
           onClick={share}
@@ -118,12 +124,13 @@ export function ContentCard({
           {imageBusy ? "جارٍ التجهيز…" : imageDone ? "تم الحفظ" : "مشاركة كصورة"}
         </button>
       </div>
-      
+
+      {/* الدعاء والذكر */}
       {duaInfo && (
-        <div className="mt-4 rounded-xl border border-accent/20 bg-accent/5 p-4">
+        <div className="mt-4 rounded-xl border border-gold/30 bg-gold/5 p-4">
           <button
             onClick={() => setShowDua(!showDua)}
-            className="flex w-full items-center justify-between text-sm font-bold text-accentStrong"
+            className="flex w-full items-center justify-between text-sm font-bold text-gold-dark"
           >
             <span>🤲 دعاء وذكر مناسب</span>
             <span>{showDua ? "▲" : "▼"}</span>
@@ -137,8 +144,8 @@ export function ContentCard({
                 </div>
                 <p className="mt-1 text-xs text-muted">{duaInfo.source} · {duaInfo.reference}</p>
               </div>
-              <div className="border-t border-accent/10 pt-3">
-                <p className="font-quran text-base leading-[1.8] text-accentStrong">{duaInfo.dhikr_ar}</p>
+              <div className="border-t border-gold/20 pt-3">
+                <p className="font-quran text-base leading-[1.8] text-gold-dark">{duaInfo.dhikr_ar}</p>
                 <div className="mt-2 flex items-center gap-2">
                   <SpeechButton text={duaInfo.dhikr_ar} />
                 </div>
@@ -148,7 +155,7 @@ export function ContentCard({
           )}
         </div>
       )}
-      
+
       <div className="mt-3 text-[11px] leading-[1.7] text-muted/80">
         اختير من المحتوى الموثّق المرتبط بتصنيف «{category.name_ar}».
       </div>

@@ -18,6 +18,7 @@ import { StoriesSection } from "./components/StoriesSection";
 import { ShahadaSection } from "./components/ShahadaSection";
 import { MosquesSection } from "./components/MosquesSection";
 import { AdhanSection } from "./components/AdhanSection";
+import { PrayerTimesSection } from "./components/PrayerTimesSection";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
@@ -81,6 +82,8 @@ export default function Home() {
           )}
         </>
       )}
+
+      {tab === "prayer" && <PrayerTimesSection />}
 
       {tab === "categories" && (
         <>

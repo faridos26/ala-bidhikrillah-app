@@ -21,6 +21,7 @@ import { MosquesSection } from "./components/MosquesSection";
 import { AdhanSection } from "./components/AdhanSection";
 import { UmrahSection } from "./components/UmrahSection";
 import { MadhabsSection } from "./components/MadhabsSection";
+import { AsmaAllahSection } from "./components/AsmaAllahSection";
 import { PrayerTimesSection } from "./components/PrayerTimesSection";
 import { ReadPageButton } from "./components/ReadPageButton";
 import { Footer } from "./components/Footer";
@@ -153,6 +154,8 @@ export default function Home() {
       {tab === "umrah" && <UmrahSection />}
 
       {tab === "madhabs" && <MadhabsSection />}
+
+      {tab === "asma" && <AsmaAllahSection />}
 
       {tab === "tasbih" && <TasbihCounter />}
 

@@ -1,6 +1,8 @@
-import type { Category, Content } from "@/lib/sakina";
+﻿import type { Category, Content } from "@/lib/sakina";
+import { getProphetStoryForCategory } from "@/lib/sakina";
 import { ContentCard } from "./ContentCard";
 import { SafetyNotice } from "./SafetyNotice";
+import { ProphetStoryCard } from "./ProphetStory";
 
 export function ResultPanel({
   category,
@@ -23,6 +25,8 @@ export function ResultPanel({
     );
   }
 
+  const prophetStory = getProphetStoryForCategory(category.code);
+
   return (
     <div className="mt-7 border-t border-border pt-6" aria-live="polite">
       <div className="flex items-start justify-between gap-3.5">
@@ -34,6 +38,7 @@ export function ResultPanel({
           مطابقة {Math.round(score * 100)}%
         </span>
       </div>
+
       <div className="mt-5 grid gap-3.5">
         {content.map((item, index) => (
           <ContentCard
@@ -45,12 +50,19 @@ export function ResultPanel({
           />
         ))}
         {!content.length && (
-          <p className="text-muted">لا يوجد محتوى موثّق متاح لهذا التصنيف حالياً.</p>
+          <p className="text-muted">لا يوجد محتوى موثّق متاح لهذا التصنيف حاليًا.</p>
         )}
       </div>
+
+      {prophetStory && (
+        <div className="mt-5">
+          <ProphetStoryCard story={prophetStory} />
+        </div>
+      )}
+
       {category.code === "GENERAL_FALLBACK" && (
         <div className="mt-3.5 rounded-2xl bg-surfaceMuted p-3.5 text-xs leading-[1.8] text-muted">
-          لم نصل إلى تصنيف واضح. يمكنك إعادة صياغة ما تشعر به بكلمات أكثر تحديداً، أو تصفح
+          لم نصل إلى تصنيف واضح. يمكنك إعادة صياغة ما تشعر به بكلمات أكثر تحديدًا، أو تصفح
           المواضيع مباشرة.
         </div>
       )}

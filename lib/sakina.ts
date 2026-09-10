@@ -1,5 +1,6 @@
 import data from "../data/sakina_v1_6.json";
 import duasData from "../data/duas.json";
+import prophetStoriesData from "../data/prophetStories.json";
 
 export type Content = {
   type: string;
@@ -27,6 +28,17 @@ export type DuaInfo = {
   dhikr_source: string;
 };
 
+export type ProphetStory = {
+  prophet: string;
+  title: string;
+  icon: string;
+  introduction: string;
+  story: string;
+  quran_verses: { text_ar: string; reference: string }[];
+  lesson: string;
+  connection: string;
+};
+
 export const sakinaData = data as {
   app: { name: string; version: string; status: string };
   reciters: unknown[];
@@ -35,6 +47,7 @@ export const sakinaData = data as {
 };
 
 export const duasDataMap = duasData as Record<string, DuaInfo>;
+export const prophetStories = prophetStoriesData.stories as Record<string, ProphetStory>;
 
 function normalizeArabic(text: string): string {
   return text
@@ -57,7 +70,7 @@ function containsKeyword(input: string, keyword: string): boolean {
 
 export function classify(text: string) {
   const input = normalizeArabic(text || "");
-  
+
   if (!input) {
     return {
       category: sakinaData.categories.find((c) => c.code === "GENERAL_FALLBACK")!,
@@ -111,4 +124,8 @@ export function allVerifiedContent() {
 
 export function getDuaForCategory(categoryCode: string): DuaInfo | undefined {
   return duasDataMap[categoryCode];
+}
+
+export function getProphetStoryForCategory(categoryCode: string): ProphetStory | undefined {
+  return prophetStories[categoryCode];
 }

@@ -16,7 +16,7 @@ const amiri = Amiri({
   display: "swap",
 });
 
-const siteUrl = "https://ala-bidhikrillah.app";
+const siteUrl = "https://ala-bidhikrillah-app.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -75,11 +75,21 @@ const themeInitScript = `
 })();
 `;
 
+// تسجيل Service Worker لتفعيل PWA
+const swRegisterScript = `
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker.register("/sw.js").catch(function() {});
+  });
+}
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ar" dir="rtl" className={`${tajawal.variable} ${amiri.variable}`}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+        <script dangerouslySetInnerHTML={{ __html: swRegisterScript }} />
       </head>
       <body>{children}</body>
     </html>

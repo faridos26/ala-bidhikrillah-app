@@ -1,20 +1,22 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 export function ReadPageButton({ textToRead }: { textToRead: string }) {
   const [speaking, setSpeaking] = useState(false);
   const [supported, setSupported] = useState(true);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined" || !("speechSynthesis" in window)) {
       setSupported(false);
     }
+    // إظهار الزر فقط إذا كان هناك نص للقراءة
+    setVisible(!!textToRead.trim());
     return () => {
       window.speechSynthesis?.cancel();
     };
-  }, []);
+  }, [textToRead]);
 
   // إيقاف القراءة عند تغيير النص
   useEffect(() => {
@@ -52,11 +54,10 @@ export function ReadPageButton({ textToRead }: { textToRead: string }) {
     utterance.onend = () => setSpeaking(false);
     utterance.onerror = () => setSpeaking(false);
 
-    utteranceRef.current = utterance;
     window.speechSynthesis.speak(utterance);
   }
 
-  if (!supported) return null;
+  if (!supported || !visible) return null;
 
   return (
     <button

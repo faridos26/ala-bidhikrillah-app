@@ -44,19 +44,45 @@ export default function Home() {
     return allContent.filter(({ content: item }) => item.text_ar.includes(q) || item.reference.includes(q));
   }, [search, allContent]);
 
+  // النص الذي سيُقرأ حسب القسم الحالي
   const textToRead = useMemo(() => {
-    if (tab === "home" && result) {
-      const parts: string[] = [];
-      parts.push(`تصنيف حالتك: ${result.category.name_ar}.`);
-      content.forEach((item, i) => {
-        parts.push(`محتوى ${i + 1}: ${item.text_ar}. المرجع: ${item.reference}.`);
-      });
-      return parts.join(" ");
+    switch (tab) {
+      case "home": {
+        if (result) {
+          const parts: string[] = [];
+          parts.push(`تصنيف حالتك: ${result.category.name_ar}.`);
+          content.forEach((item, i) => {
+            parts.push(`محتوى ${i + 1}: ${item.text_ar}. المرجع: ${item.reference}.`);
+          });
+          return parts.join(" ");
+        }
+        return "خذ لحظة واذكر الله. اكتب ما يثقل قلبك أو اختر من الإيموجي كيف تشعر. ثم اضغط ابحث عن السكينة.";
+      }
+      case "prayer":
+        return "قسم مواقيت الصلاة. إن الصلاة كانت على المؤمنين كتابا موقوتا. اختر مدينتك لمعرفة مواقيت الصلاة. يمكنك الاستماع إلى الأذان، ومشاهدة العد التنازلي للصلاة القادمة.";
+      case "categories":
+        return "قسم المواضيع. تصفح الفئات المختلفة مثل الحزن والقلق والفرح والأمل، أو ابحث في الآيات والأدعية. اضغط على أي موضوع لعرض المحتوى المرتبط به.";
+      case "stories":
+        return "قسم القصص. اختر قصة لتقرأها، فيها قصص الأنبياء وقصص هادفة للأطفال. كل قصة تحتوي على العبرة والدروس المستفادة.";
+      case "shahada":
+        return "قسم نطق الشهادة. أشهد أن لا إله إلا الله، وأشهد أن محمدا رسول الله. اضغط على كل كلمة لسماع نطقها الصحيح، واستمع للشهادة كاملة.";
+      case "mosques":
+        return "قسم المساجد. تعرّف على أجمل المساجد في العالم، ابتداء من المسجد الحرام والمسجد النبوي والمسجد الأقصى، وجامع عقبة بن نافع وجامع الزيتونة في تونس.";
+      case "adhan":
+        return "قسم الأذان. استمع إلى الأذان بأصوات مؤذنين مختلفين، واقرأ نص الأذان ومعانيه، وتعلم آداب الأذان والإقامة والدعاء بعد الأذان.";
+      case "umrah":
+        return "قسم العمرة. تعلم خطوات العمرة كاملة، من الإحرام إلى الحلق أو التقصير، مع الأدعية والملاحظات والمحظورات والأخطاء الشائعة.";
+      case "madhabs":
+        return "قسم المذاهب الفقهية. نبذة تعريفية محايدة عن المذاهب الأربعة: الحنفي والمالكي والشافعي والحنبلي. تعرف على مؤسسيها وأصولها وانتشارها.";
+      case "asma":
+        return "قسم أسماء الله الحسنى. تسعة وتسعون اسما من أسماء الله، مع معانيها وشرحها. يمكنك البحث في الأسماء، والاستماع لكل اسم.";
+      case "tasbih":
+        return "قسم التسبيح. عداد إلكتروني للتسبيح. اضغط على الدائرة للعد، واختر بين سبحان الله والحمد لله والله أكبر ولا إله إلا الله وأستغفر الله.";
+      case "favorites":
+        return "قسم المحفوظات. هنا تجد المحتوى الذي حفظته من الآيات والأدعية والقصص. يمكنك إزالته أو مشاركته.";
+      default:
+        return "";
     }
-    if (tab === "home") {
-      return "خذ لحظة واذكر الله. اكتب ما يثقل قلبك أو اختر من الإيموجي كيف تشعر.";
-    }
-    return "";
   }, [tab, result, content]);
 
   function handleSubmit(value: string) {
@@ -163,7 +189,8 @@ export default function Home() {
 
       <Footer />
 
-      {tab === "home" && <ReadPageButton textToRead={textToRead} />}
+      {/* زر اقرأ لي - يعمل في جميع الأقسام */}
+      <ReadPageButton textToRead={textToRead} />
     </main>
   );
 }

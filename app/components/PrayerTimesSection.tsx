@@ -152,6 +152,13 @@ export function PrayerTimesSection() {
             اختر طريقة تحديد موقعك لمعرفة مواقيت الصلاة في مدينتك
           </p>
         </div>
+        {/* آية قرآنية */}
+        <div className="rounded-2xl border border-gold/30 bg-gradient-to-b from-surface to-gold/5 p-5 text-center">
+          <p className="font-quran text-xl font-bold leading-[2] text-gold-dark">
+            ﴿إِنَّ الصَّلَاةَ كَانَتْ عَلَى الْمُؤْمِنِينَ كِتَابًا مَّوْقُوتًا﴾
+          </p>
+          <p className="mt-2 text-xs text-muted">سورة النساء - الآية 103</p>
+        </div>
 
         {/* اختيار المدينة يدويًا */}
         <div className="rounded-2xl border border-gold/30 bg-gradient-to-b from-surface to-gold/5 p-5">
